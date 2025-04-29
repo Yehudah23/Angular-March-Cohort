@@ -1,0 +1,16 @@
+<div class="col-6 mx-auto shadow p-5">
+    <h1 class="text-center text-secondary">Template Driven form</h1>
+    <form>
+        <input type="text" name="firstname" class="form-control my-2" [(ngModel)]="firstname" minlength="3" maxlength="8" #fname="ngModel" [class.is-valid]="fname.valid && fname.dirty" [class.is-invalid]="fname.invalid && fname.dirty" required>
+        <div *ngIf="fname.untouched">
+            <small class="text-center text-dark" *ngIf="fname?.errors?.['minlength']"> The required minimum length is 3</small>
+            <small class="text-dark text-center" *ngIf="fname?.errors?.['maxlength']"> Maximum should be 8 characters</small>
+            <small class="text-center text-danger" *ngIf="fname?.errors?.['required']">This field is required</small>
+        </div>
+        <input type="email" name="email" class="form-control my-3" [(ngModel)]="email">
+        <div class="text-center">
+            <button class="btn btn-primary w-25">Template</button>
+        </div>
+    </form>
+
+</div>

@@ -1,0 +1,65 @@
+<p>reactiveform works!</p>
+
+<div class="col-5 mx-auto shadow p-4 mb-4">
+    <h1 class="text-center text-danger ">
+       Reactive form
+    </h1>
+    <form action="" [formGroup]="form" (submit)="handlesubmit()">
+        <input type="text" class="form-control my-2" formControlName="fullname" [class.is-valid]="form.get('fullname')?.valid && form.get('fullname')?.dirty"  [class.is-invalid]="form.get('fullname')?.invalid && form.get('fullname')?.dirty">
+        <div *ngIf="form.get('fullname')?.invalid && form.get('fullname')?.dirty">
+            <small *ngIf="form.get('fullname')?.errors?.['required']">This field is required</small>
+        </div>
+        <input type="text" class="form-control my-2" formControlName="email" [class.is-valid]="form.get('email')?.valid && form.get('email')?.dirty">
+        <div *ngIf="form.get('email')?.invalid && form.get('email')?.dirty">
+            <small *ngIf="form.get('email')?.errors?.['email']">input email</small>
+        </div>
+
+        <input type="checkbox" formControlName="checkbox" [class.is-valid]="form.get('checkbox')?.valid && form.get('checkbox')?.dirty"  [class.is-invalid]="form.get('checkbox')?.invalid && form.get('checkbox')?.dirty" >
+      
+        <button type="submit" class="btn btn-success" [disabled]="form.invalid">Submit</button>
+    </form>
+    
+</div>
+
+<div class="col-5 mx-auto shadow p-4 mb-4">
+    <h1 class="text-center text-danger ">
+       Reactive form
+    </h1>
+    <form action="" [formGroup]="form2" (submit)="handlesubmit()">
+        <input type="number" class="form-control my-2" formControlName="phoneNumber" [class.is-valid]="form.get('phoneNumber')?.valid && form.get('phoneNumber')?.dirty"  [class.is-invalid]="form.get('phoneNumber')?.invalid && form.get('PhoneNumber')?.dirty">
+        <div *ngIf="form.get('phoneNumber')?.invalid && form.get('PhoneNumber')?.dirty">
+            <small *ngIf="form.get('phoneNumber')?.errors?.['required']">Insert phone number</small>
+        </div>
+        <input type="text" class="form-control my-2" formControlName="address" [class.is-valid]="form.get('address')?.valid && form.get('address')?.dirty">
+        <div *ngIf="form.get('address')?.invalid && form.get('address')?.dirty">
+            <small *ngIf="form.get('address')?.errors?.['required']">input address</small>
+        </div>
+
+        <!-- <input type="checkbox" formControlName="checkbox" [class.is-valid]="form.get('checkbox')?.valid && form.get('checkbox')?.dirty"  [class.is-invalid]="form.get('checkbox')?.invalid && form.get('checkbox')?.dirty" > -->
+      
+        <button type="submit" class="btn btn-success" [disabled]="form.invalid">Submit</button>
+    </form>
+    
+</div>
+
+
+<div class="col-5 mx-auto shadow p-4">
+    <h1 class="text-center text-danger ">
+       Reactive form
+    </h1>
+    <form action="" [formGroup]="form3" (submit)="handlesubmit()">
+        <input type="date" class="form-control my-2" formControlName="birthDate" [class.is-valid]="form.get('birthDate')?.valid && form.get('birthDate')?.dirty"  [class.is-invalid]="form.get('birthDate')?.invalid && form.get('birthDate')?.dirty">
+        <div *ngIf="form.get('birthDate')?.invalid && form.get('birthDate')?.dirty">
+            <small *ngIf="form.get('birthDate')?.errors?.['required']">This field is required</small>
+        </div>
+        <input type="text" class="form-control my-2" formControlName="Gender" [class.is-valid]="form.get('Gender')?.valid && form.get('Gender')?.dirty">
+        <div *ngIf="form.get('Gender')?.invalid && form.get('Gender')?.dirty">
+            <small *ngIf="form.get('Gender')?.errors?.['required']">Input gender</small>
+        </div>
+
+        <!-- <input type="checkbox" formControlName="checkbox" [class.is-valid]="form.get('checkbox')?.valid && form.get('checkbox')?.dirty"  [class.is-invalid]="form.get('checkbox')?.invalid && form.get('checkbox')?.dirty" > -->
+      
+        <button type="submit" class="btn btn-success" [disabled]="form.invalid">Submit</button>
+    </form>
+    
+</div>

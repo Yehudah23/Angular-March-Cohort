@@ -1,0 +1,10 @@
+
+<app-navbar/>
+
+<div class="col-6 mx-auto shadow">
+    <h1 class="text-center">Landing page</h1> 
+    <div>{{data}}</div>
+    <div *ngFor="let item of Parray, let i=index" class="p-5">
+     <p (click)="sendprov(item)">{{item.name}}</p>
+     <a routerLink={{item.id}} class="">View Details</a>
+    </div>

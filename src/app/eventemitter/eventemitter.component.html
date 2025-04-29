@@ -1,0 +1,12 @@
+<p>eventemitter works!</p>
+
+<div class="shadow row col-10 mx-auto">
+    <p>message from child: {{this.data}}</p>
+    <div class="col-6">
+<input type="text" [(ngModel)]="msg" class="form-control my-2">
+<button class="btn btn-primary" (click)="sendChat()">send chat</button>
+    </div>
+    <div>
+        <app-eventchild [receivechild]="this.newMsg"  (eventemitter)="receivedata($event)"/>
+    </div>
+</div>
